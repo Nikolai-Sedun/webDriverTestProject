@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing suite" verbose="2" parallel="tests" thread-count="1"
+  allow-return-values="true">
+  <test name="Login tests">
+    <classes>
+      <class name="com.itacademy.tests.LoginTest"/>
+    </classes>
+  </test>
+  <test name="Sending mail tests">
+    <classes>
+      <class name="com.itacademy.tests.SendingMailTest"/>
+    </classes>
+  </test>
+  <test name="Sending not full mail tests">
+    <classes>
+      <class name="com.itacademy.tests.SendingNotFullMailTest"/>
+    </classes>
+  </test>
+  <test name="Draft mail tests">
+    <classes>
+      <class name="com.itacademy.tests.DraftMailTest"/>
+    </classes>
+  </test>
+</suite>
