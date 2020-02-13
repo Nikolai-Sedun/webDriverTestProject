@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing cloud suite" verbose="2" parallel="tests" thread-count="1"
+  allow-return-values="true">
+  <test name="Login tests" enabled="false">
+    <classes>
+      <class name="com.itacademy.tests.cloud.CloudLoginTest"/>
+    </classes>
+  </test>
+  <test name="Folder tests" enabled="false">
+    <classes>
+      <class name="com.itacademy.tests.cloud.CloudFolderTest"/>
+    </classes>
+  </test>
+  <test name="File tests" enabled="false">
+    <classes>
+      <class name="com.itacademy.tests.cloud.CloudFileTest"/>
+    </classes>
+  </test>
+  <test name="Share element tests">
+    <classes>
+      <class name="com.itacademy.tests.cloud.CloudShareTest"/>
+    </classes>
+  </test>
+</suite>

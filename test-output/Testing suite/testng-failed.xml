@@ -3,15 +3,15 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [Testing suite]" parallel="tests" allow-return-values="true">
   <test thread-count="1" verbose="2" name="Draft mail tests(failed)" parallel="tests">
     <classes>
-      <class name="com.itacademy.tests.DraftMailTest">
+      <class name="com.itacademy.tests.mail.DraftMailTest">
         <methods>
+          <include name="deletedFromDeletedTabMailCompletelyGone"/>
           <include name="closeBrowser"/>
           <include name="deletedDraftMailAppearedInDeletedTabTest"/>
           <include name="setUp"/>
           <include name="openBrowser"/>
-          <include name="deletedFromDeletedTabMailCompletelyGone"/>
         </methods>
-      </class> <!-- com.itacademy.tests.DraftMailTest -->
+      </class> <!-- com.itacademy.tests.mail.DraftMailTest -->
     </classes>
   </test> <!-- Draft mail tests(failed) -->
 </suite> <!-- Failed suite [Testing suite] -->

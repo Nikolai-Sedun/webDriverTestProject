@@ -4,22 +4,22 @@
   allow-return-values="true">
   <test name="Login tests">
     <classes>
-      <class name="com.itacademy.tests.LoginTest"/>
+      <class name="com.itacademy.tests.mail.LoginTest"/>
     </classes>
   </test>
   <test name="Sending mail tests">
     <classes>
-      <class name="com.itacademy.tests.SendingMailTest"/>
+      <class name="com.itacademy.tests.mail.SendingMailTest"/>
     </classes>
   </test>
   <test name="Sending not full mail tests">
     <classes>
-      <class name="com.itacademy.tests.SendingNotFullMailTest"/>
+      <class name="com.itacademy.tests.mail.SendingNotFullMailTest"/>
     </classes>
   </test>
   <test name="Draft mail tests">
     <classes>
-      <class name="com.itacademy.tests.DraftMailTest"/>
+      <class name="com.itacademy.tests.mail.DraftMailTest"/>
     </classes>
   </test>
 </suite>

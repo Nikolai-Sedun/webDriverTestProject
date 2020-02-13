@@ -1,9 +1,9 @@
-package com.itacademy.pages;
+package com.itacademy.pages.mail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DraftPageYandex extends BasePage {
+public class DraftPage extends BasePage {
 
     private static final By MAIL_CHECKBOX_LOCATOR = By
             .xpath("//label[@class=\"mail-Toolbar-Item-Checkbox\"]/span");
@@ -11,7 +11,7 @@ public class DraftPageYandex extends BasePage {
             .xpath("//span[contains(@class,\"js-toolbar-item-title-delete\")]");
     private static final By DELETED_TAB_LOCATOR = By.xpath("//a[@data-title='Удалённые']");
 
-    public DraftPageYandex(WebDriver driver) {
+    public DraftPage(WebDriver driver) {
         super(driver);
     }
 
@@ -22,8 +22,8 @@ public class DraftPageYandex extends BasePage {
         }
     }
 
-    public DeletedPageYandex goToDeletedPage() {
+    public DeletedPage goToDeletedPage() {
         clickButton(DELETED_TAB_LOCATOR);
-        return new DeletedPageYandex(driver);
+        return new DeletedPage(driver);
     }
 }

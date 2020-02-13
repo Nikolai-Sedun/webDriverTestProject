@@ -1,10 +1,10 @@
-package com.itacademy.pages;
+package com.itacademy.pages.mail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-public class DeletedPageYandex extends BasePage {
+public class DeletedPage extends BasePage {
 
     private static final By INCOMING_TAB_LOCATOR = By.xpath("//a[@data-title='Входящие']");
     private static final By FOLDER_CLEAR_LOCATOR = By.xpath("//a[@action=\"folder.clear\"]");
@@ -13,7 +13,7 @@ public class DeletedPageYandex extends BasePage {
     private static final By DELETED_TAB_EMPTY_LOCATOR = By
             .xpath("//div[@class=\"b-messages__placeholder-item\"]");
 
-    public DeletedPageYandex(WebDriver driver) {
+    public DeletedPage(WebDriver driver) {
         super(driver);
     }
 
@@ -22,9 +22,9 @@ public class DeletedPageYandex extends BasePage {
         clickButton(CLEAR_CONFIRMATION_BUTTON_LOCATOR);
     }
 
-    public MailPageYandex returnToMailPage() {
+    public MailPage returnToMailPage() {
         clickButton(INCOMING_TAB_LOCATOR);
-        return new MailPageYandex(driver);
+        return new MailPage(driver);
     }
 
     public String getDeletedTabEmptyMessage() {

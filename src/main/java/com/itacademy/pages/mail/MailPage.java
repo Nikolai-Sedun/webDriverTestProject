@@ -1,9 +1,9 @@
-package com.itacademy.pages;
+package com.itacademy.pages.mail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MailPageYandex extends BasePage {
+public class MailPage extends BasePage {
 
     private static final By WRITE_MAIL_BUTTON_LOCATOR = By.xpath("//a[@href=\"#compose\"]");
     private static final By ADDRESS_INPUT_LOCATOR = By.name("to");
@@ -25,7 +25,7 @@ public class MailPageYandex extends BasePage {
     private static final By ERROR_ADDRESS_MESSAGE_LOCATOR = By
             .xpath("//div[@data-key=\"view=compose-field-to-error\"]");
 
-    public MailPageYandex(WebDriver driver) {
+    public MailPage(WebDriver driver) {
         super(driver);
     }
 
@@ -74,20 +74,20 @@ public class MailPageYandex extends BasePage {
         clickButton(CONFIRM_EXIT_BUTTON_LOCATOR);
     }
 
-    public SentPageYandex goToSentPage() {
+    public SentPage goToSentPage() {
         clickButton(SENT_TAB_LOCATOR);
-        return new SentPageYandex(driver);
+        return new SentPage(driver);
     }
 
-    public DeletedPageYandex goToDeletedPage() {
+    public DeletedPage goToDeletedPage() {
         clickButton(DELETED_TAB_LOCATOR);
-        return new DeletedPageYandex(driver);
+        return new DeletedPage(driver);
     }
 
-    public DraftPageYandex goToDraftPage() {
+    public DraftPage goToDraftPage() {
         clickButton(DRAFT_TAB_LOCATOR);
         clickButton(REFRESH_BUTTON_LOCATOR);
-        return new DraftPageYandex(driver);
+        return new DraftPage(driver);
     }
 
     public String getErrorMessage() {

@@ -1,10 +1,11 @@
-package com.itacademy.pages;
+package com.itacademy.pages.mail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPageYandex extends BasePage {
+public class LoginPage extends BasePage {
 
+  private static final String YANDEX_URL = "https://www.yandex.by/";
   private static final By MAIL_BUTTON_LOCATOR = By
       .xpath("//a[@data-statlog=\"notifications.mail.logout.title\"]");
   private static final By LOGIN_INPUT_LOCATOR = By.name("login");
@@ -17,23 +18,24 @@ public class LoginPageYandex extends BasePage {
   private static final By OTHER_ACCOUNT_BUTTON_LOCATOR = By
       .xpath("//a[contains(text(),\"Другой аккаунт\")]");
 
-  public LoginPageYandex(WebDriver driver) {
+  public LoginPage(WebDriver driver) {
     super(driver);
   }
 
-  public MailPageYandex loginToMail(String login, String password) {
-    goToLoginPage();
+  public MailPage loginToMail(String login, String password) {
+    open();
     insertLogin(login);
     insertPassword(password);
-    return new MailPageYandex(driver);
+    return new MailPage(driver);
   }
 
-  public void goToLoginPage() {
-    driver.get("https://www.yandex.by/");
+  public LoginPage open() {
+    driver.get(YANDEX_URL);
     clickButton(MAIL_BUTTON_LOCATOR);
     if (driver.findElement(OTHER_ACCOUNT_BUTTON_LOCATOR).isDisplayed()) {
       clickButton(OTHER_ACCOUNT_BUTTON_LOCATOR);
     }
+    return new LoginPage(driver);
   }
 
   public void insertLogin(String login) {

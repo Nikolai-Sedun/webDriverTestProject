@@ -1,93 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Testing suite" duration-ms="66818" started-at="2020-02-07T10:25:10 EET" finished-at="2020-02-07T10:26:17 EET">
+  <suite name="Testing cloud suite" duration-ms="6925" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:23 MSK">
     <groups>
     </groups>
-    <test name="Login tests" duration-ms="9201" started-at="2020-02-07T10:25:10 EET" finished-at="2020-02-07T10:25:19 EET">
-      <class name="com.itacademy.tests.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.LoginTest@7ac7a4e4]" name="setUp" is-config="true" duration-ms="2751" started-at="2020-02-07T10:25:10 EET" finished-at="2020-02-07T10:25:13 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginToMailTest()[pri:0, instance:com.itacademy.tests.LoginTest@7ac7a4e4]" name="loginToMailTest" duration-ms="4166" started-at="2020-02-07T10:25:13 EET" finished-at="2020-02-07T10:25:17 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginToMailTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.LoginTest@7ac7a4e4]" name="setUp" is-config="true" duration-ms="1242" started-at="2020-02-07T10:25:17 EET" finished-at="2020-02-07T10:25:18 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="negativeLoginToMailTest()[pri:0, instance:com.itacademy.tests.LoginTest@7ac7a4e4]" name="negativeLoginToMailTest" duration-ms="1023" started-at="2020-02-07T10:25:18 EET" finished-at="2020-02-07T10:25:19 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- negativeLoginToMailTest -->
-      </class> <!-- com.itacademy.tests.LoginTest -->
-    </test> <!-- Login tests -->
-    <test name="Sending mail tests" duration-ms="27440" started-at="2020-02-07T10:25:19 EET" finished-at="2020-02-07T10:25:47 EET">
-      <class name="com.itacademy.tests.SendingMailTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.SendingMailTest@675d3402]" name="setUp" is-config="true" duration-ms="5831" started-at="2020-02-07T10:25:19 EET" finished-at="2020-02-07T10:25:25 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="sentMailAppearedInSentTabTest()[pri:1, instance:com.itacademy.tests.SendingMailTest@675d3402]" name="sentMailAppearedInSentTabTest" duration-ms="19705" started-at="2020-02-07T10:25:25 EET" finished-at="2020-02-07T10:25:45 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sentMailAppearedInSentTabTest -->
-        <test-method status="PASS" signature="sentMailAppearedInIncomingTabTest()[pri:1, instance:com.itacademy.tests.SendingMailTest@675d3402]" name="sentMailAppearedInIncomingTabTest" duration-ms="149" started-at="2020-02-07T10:25:45 EET" depends-on-methods="com.itacademy.tests.SendingMailTest.sentMailAppearedInSentTabTest" finished-at="2020-02-07T10:25:45 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sentMailAppearedInIncomingTabTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.SendingMailTest@675d3402]" name="tearDown" is-config="true" duration-ms="1751" started-at="2020-02-07T10:25:45 EET" finished-at="2020-02-07T10:25:47 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.itacademy.tests.SendingMailTest -->
-    </test> <!-- Sending mail tests -->
-    <test name="Sending not full mail tests" duration-ms="22699" started-at="2020-02-07T10:25:47 EET" finished-at="2020-02-07T10:26:09 EET">
-      <class name="com.itacademy.tests.SendingNotFullMailTest">
-        <test-method status="PASS" signature="negativeMailTest()[pri:1, instance:com.itacademy.tests.SendingNotFullMailTest@39aeed2f]" name="negativeMailTest" duration-ms="6019" started-at="2020-02-07T10:25:47 EET" finished-at="2020-02-07T10:25:53 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- negativeMailTest -->
-        <test-method status="PASS" signature="sentNotFullMailAppearedInSentTabTest()[pri:2, instance:com.itacademy.tests.SendingNotFullMailTest@39aeed2f]" name="sentNotFullMailAppearedInSentTabTest" duration-ms="14861" started-at="2020-02-07T10:25:53 EET" finished-at="2020-02-07T10:26:07 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sentNotFullMailAppearedInSentTabTest -->
-        <test-method status="PASS" signature="sentMailAppearedInIncomingTabTest()[pri:2, instance:com.itacademy.tests.SendingNotFullMailTest@39aeed2f]" name="sentMailAppearedInIncomingTabTest" duration-ms="154" started-at="2020-02-07T10:26:07 EET" depends-on-methods="com.itacademy.tests.SendingNotFullMailTest.sentNotFullMailAppearedInSentTabTest" finished-at="2020-02-07T10:26:08 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sentMailAppearedInIncomingTabTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.SendingNotFullMailTest@39aeed2f]" name="tearDown" is-config="true" duration-ms="1663" started-at="2020-02-07T10:26:08 EET" finished-at="2020-02-07T10:26:09 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.itacademy.tests.SendingNotFullMailTest -->
-    </test> <!-- Sending not full mail tests -->
-    <test name="Draft mail tests" duration-ms="7438" started-at="2020-02-07T10:26:09 EET" finished-at="2020-02-07T10:26:17 EET">
-      <class name="com.itacademy.tests.DraftMailTest">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.itacademy.tests.DraftMailTest@4b9e13df]" name="openBrowser" is-config="true" duration-ms="4539" started-at="2020-02-07T10:25:05 EET" finished-at="2020-02-07T10:25:10 EET">
+    <test name="Share element tests" duration-ms="6925" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:23 MSK">
+      <class name="com.itacademy.tests.cloud.CloudShareTest">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="openBrowser" is-config="true" duration-ms="10369" started-at="2020-02-13T21:30:06 MSK" finished-at="2020-02-13T21:30:16 MSK">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.DraftMailTest@4b9e13df]" name="setUp" is-config="true" duration-ms="4928" started-at="2020-02-07T10:26:09 EET" finished-at="2020-02-07T10:26:14 EET">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="setUp" is-config="true" duration-ms="2971" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:19 MSK">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="deletedDraftMailAppearedInDeletedTabTest()[pri:0, instance:com.itacademy.tests.DraftMailTest@4b9e13df]" name="deletedDraftMailAppearedInDeletedTabTest" duration-ms="1989" started-at="2020-02-07T10:26:14 EET" finished-at="2020-02-07T10:26:16 EET">
+        <test-method status="PASS" signature="sharingElementTest()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="sharingElementTest" duration-ms="3910" started-at="2020-02-13T21:30:19 MSK" finished-at="2020-02-13T21:30:23 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deletedDraftMailAppearedInDeletedTabTest -->
-        <test-method status="PASS" signature="deletedFromDeletedTabMailCompletelyGone()[pri:0, instance:com.itacademy.tests.DraftMailTest@4b9e13df]" name="deletedFromDeletedTabMailCompletelyGone" duration-ms="519" started-at="2020-02-07T10:26:16 EET" depends-on-methods="com.itacademy.tests.DraftMailTest.deletedDraftMailAppearedInDeletedTabTest" finished-at="2020-02-07T10:26:17 EET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deletedFromDeletedTabMailCompletelyGone -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.itacademy.tests.DraftMailTest@4b9e13df]" name="closeBrowser" is-config="true" duration-ms="2922" started-at="2020-02-07T10:26:17 EET" finished-at="2020-02-07T10:26:20 EET">
+        </test-method> <!-- sharingElementTest -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="closeBrowser" is-config="true" duration-ms="4883" started-at="2020-02-13T21:30:23 MSK" finished-at="2020-02-13T21:30:28 MSK">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.itacademy.tests.DraftMailTest -->
-    </test> <!-- Draft mail tests -->
-  </suite> <!-- Testing suite -->
+      </class> <!-- com.itacademy.tests.cloud.CloudShareTest -->
+    </test> <!-- Share element tests -->
+  </suite> <!-- Testing cloud suite -->
 </testng-results>
