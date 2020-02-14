@@ -6,6 +6,7 @@
       <class name="com.itacademy.tests.mail.DraftMailTest">
         <methods>
           <include name="deletedFromDeletedTabMailCompletelyGone"/>
+          <include name="tearDown"/>
           <include name="closeBrowser"/>
           <include name="deletedDraftMailAppearedInDeletedTabTest"/>
           <include name="setUp"/>

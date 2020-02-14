@@ -1,96 +1,99 @@
 package com.itacademy.pages.mail;
 
+import static com.itacademy.framework.Browser.*;
+
+import com.itacademy.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MailPage extends BasePage {
 
-    private static final By WRITE_MAIL_BUTTON_LOCATOR = By.xpath("//a[@href=\"#compose\"]");
-    private static final By ADDRESS_INPUT_LOCATOR = By.name("to");
-    private static final By SUBJECT_INPUT_LOCATOR = By.xpath("//div/input[@type=\"text\"]");
-    private static final By MAIL_TEXT_INPUT_LOCATOR = By.xpath("//div[@role=\"textbox\"]");
-    private static final By SEND_BUTTON_LOCATOR = By
-            .xpath("//div[@data-key=\"view=compose-send-button-complex\"]/button");
-    private static final By SENT_TAB_LOCATOR = By.xpath("//a[@data-title='Отправленные']");
-    private static final By DELETED_TAB_LOCATOR = By.xpath("//a[@data-title='Удалённые']");
-    private static final By DRAFT_TAB_LOCATOR = By.xpath("//a[@href='#draft']/span");
-    private static final By MAIL_CHECKBOX_LOCATOR = By
-            .xpath("//label[@class=\"mail-Toolbar-Item-Checkbox\"]/span");
-    private static final By DELETE_BUTTON_LOCATOR = By.xpath("//span[contains(text(),\"Удалить\")]");
-    private static final By EXIT_MAIL_BUTTON_LOCATOR = By
-            .xpath("//div[@data-key=\"view=compose-cancel-button\"]");
-    private static final By CONFIRM_EXIT_BUTTON_LOCATOR = By.xpath("//button[@data-action=\"save\"]");
-    private static final By REFRESH_BUTTON_LOCATOR = By
-            .xpath("//span[@data-click-action=\"mailbox.check\"]");
-    private static final By ERROR_ADDRESS_MESSAGE_LOCATOR = By
-            .xpath("//div[@data-key=\"view=compose-field-to-error\"]");
+  private static final By WRITE_MAIL_BUTTON_LOCATOR = By.xpath("//a[@href=\"#compose\"]");
+  private static final By ADDRESS_INPUT_LOCATOR = By.name("to");
+  private static final By SUBJECT_INPUT_LOCATOR = By.xpath("//div/input[@type=\"text\"]");
+  private static final By MAIL_TEXT_INPUT_LOCATOR = By.xpath("//div[@role=\"textbox\"]");
+  private static final By SEND_BUTTON_LOCATOR = By
+      .xpath("//div[@data-key=\"view=compose-send-button-complex\"]/button");
+  private static final By SENT_TAB_LOCATOR = By.xpath("//a[@data-title='Отправленные']");
+  private static final By DELETED_TAB_LOCATOR = By.xpath("//a[@data-title='Удалённые']");
+  private static final By DRAFT_TAB_LOCATOR = By.xpath("//a[@href='#draft']/span");
+  private static final By MAIL_CHECKBOX_LOCATOR = By
+      .xpath("//label[@class=\"mail-Toolbar-Item-Checkbox\"]/span");
+  private static final By DELETE_BUTTON_LOCATOR = By.xpath("//span[contains(text(),\"Удалить\")]");
+  private static final By EXIT_MAIL_BUTTON_LOCATOR = By
+      .xpath("//div[@data-key=\"view=compose-cancel-button\"]");
+  private static final By CONFIRM_EXIT_BUTTON_LOCATOR = By.xpath("//button[@data-action=\"save\"]");
+  private static final By ERROR_ADDRESS_MESSAGE_LOCATOR = By
+      .xpath("//div[@data-key=\"view=compose-field-to-error\"]");
+  private static final By USERNAME_LOCATOR = By.className("mail-User-Name");
+  private static final By LOGOUT_BUTTON_LOCATOR = By
+      .xpath("//a[@data-metric=\"Sign out of Yandex services\"]");
 
-    public MailPage(WebDriver driver) {
-        super(driver);
-    }
+  public MailPage(WebDriver driver) {
+    super(driver);
+  }
 
-    public void sendNewMail(String address, String mailText) {
-        clickButton(WRITE_MAIL_BUTTON_LOCATOR);
-        inputMailAddress(address);
-        inputMailSubject(mailText);
-        inputMailText(mailText);
-        clickButton(SEND_BUTTON_LOCATOR);
-    }
+  public String getUsername() {
+    return getElementText(USERNAME_LOCATOR);
+  }
 
-    public void sendNotFullMail(String address) {
-        clickButton(WRITE_MAIL_BUTTON_LOCATOR);
-        inputMailAddress(address);
-        clickButton(SEND_BUTTON_LOCATOR);
-    }
+  public void clickWriteButton() {
+    clickButton(WRITE_MAIL_BUTTON_LOCATOR);
+  }
 
-    public void createDraftMail(String mailText) {
-        clickButton(WRITE_MAIL_BUTTON_LOCATOR);
-        inputMailSubject(mailText);
-        inputMailText(mailText);
-        exitDraftMail();
-    }
+  public void inputMailAddress(String address) {
+    sendKeysToElement(ADDRESS_INPUT_LOCATOR, address);
+  }
 
-    public void deleteTopMailFromIncomingIfEqualsGiven(String subject) {
-        if (isTopMailSubjectEqualsGiven(subject)) {
-            clickButton(MAIL_CHECKBOX_LOCATOR);
-            clickButton(DELETE_BUTTON_LOCATOR);
-        }
-    }
+  public String getErrorAddressMessage() {
+    return getElementText(ERROR_ADDRESS_MESSAGE_LOCATOR);
+  }
 
-    private void inputMailAddress(String address) {
-        sendKeysToElement(ADDRESS_INPUT_LOCATOR, address);
-    }
+  public void inputMailSubject(String subject) {
+    sendKeysToElement(SUBJECT_INPUT_LOCATOR, subject);
+  }
 
-    private void inputMailSubject(String subject) {
-        sendKeysToElement(SUBJECT_INPUT_LOCATOR, subject);
-    }
+  public void inputMailText(String mailText) {
+    sendKeysToElement(MAIL_TEXT_INPUT_LOCATOR, mailText);
+  }
 
-    private void inputMailText(String mailText) {
-        sendKeysToElement(MAIL_TEXT_INPUT_LOCATOR, mailText);
-    }
+  public void clickSendButton() {
+    clickButton(SEND_BUTTON_LOCATOR);
+  }
 
-    public void exitDraftMail() {
-        clickButton(EXIT_MAIL_BUTTON_LOCATOR);
-        clickButton(CONFIRM_EXIT_BUTTON_LOCATOR);
-    }
+  public void clickExitMailButton() {
+    clickButton(EXIT_MAIL_BUTTON_LOCATOR);
+  }
 
-    public SentPage goToSentPage() {
-        clickButton(SENT_TAB_LOCATOR);
-        return new SentPage(driver);
-    }
+  public void clickConfirmExitButton() {
+    clickButton(CONFIRM_EXIT_BUTTON_LOCATOR);
+  }
 
-    public DeletedPage goToDeletedPage() {
-        clickButton(DELETED_TAB_LOCATOR);
-        return new DeletedPage(driver);
-    }
+  public void clickMailCheckbox() {
+    clickButton(MAIL_CHECKBOX_LOCATOR);
+  }
 
-    public DraftPage goToDraftPage() {
-        clickButton(DRAFT_TAB_LOCATOR);
-        clickButton(REFRESH_BUTTON_LOCATOR);
-        return new DraftPage(driver);
-    }
+  public void clickDeleteButton() {
+    clickButton(DELETE_BUTTON_LOCATOR);
+  }
 
-    public String getErrorMessage() {
-        return getElementText(ERROR_ADDRESS_MESSAGE_LOCATOR);
-    }
+  public void clickSentTabButton() {
+    clickButton(SENT_TAB_LOCATOR);
+  }
+
+  public void clickDraftTabButton() {
+    clickButton(DRAFT_TAB_LOCATOR);
+  }
+
+  public void clickDeletedTabButton() {
+    clickButton(DELETED_TAB_LOCATOR);
+  }
+
+  public void getUserMenu() {
+    clickButton(USERNAME_LOCATOR);
+  }
+
+  public void clickLogoutButton() {
+    clickButton(LOGOUT_BUTTON_LOCATOR);
+  }
 }

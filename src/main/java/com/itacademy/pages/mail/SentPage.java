@@ -1,5 +1,8 @@
 package com.itacademy.pages.mail;
 
+import static com.itacademy.framework.Browser.*;
+
+import com.itacademy.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,15 +17,15 @@ public class SentPage extends BasePage {
     super(driver);
   }
 
-  public void deleteTopMailFromSentIfEqualsGiven(String subject) {
-    if (isTopMailSubjectEqualsGiven(subject)) {
-      clickButton(MAIL_CHECKBOX_LOCATOR);
-      clickButton(DELETE_BUTTON_LOCATOR);
-    }
+  public void clickMailCheckbox() {
+    clickButton(MAIL_CHECKBOX_LOCATOR);
   }
 
-  public MailPage returnToMailPage() {
+  public  void clickDeleteButton() {
+    clickButton(DELETE_BUTTON_LOCATOR);
+  }
+
+  public void clickIncomingTabButton() {
     clickButton(INCOMING_TAB_LOCATOR);
-    return new MailPage(driver);
   }
 }

@@ -1,14 +1,12 @@
 package com.itacademy.tests.mail;
 
-import com.itacademy.pages.mail.LoginPage;
-import com.itacademy.pages.mail.MailPage;
-import com.itacademy.pages.mail.SentPage;
-import com.itacademy.service.Browser;
+import com.itacademy.models.Mail;
+import com.itacademy.models.User;
+import com.itacademy.service.mail.LoginPageService;
+import com.itacademy.service.mail.MailPageService;
+import com.itacademy.service.mail.SentPageService;
+import com.itacademy.service.mail.YandexPageService;
 import com.itacademy.tests.BaseTest;
-import java.time.Duration;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,40 +14,41 @@ import org.testng.annotations.Test;
 
 public class SendingMailTest extends BaseTest {
 
-  private static final String MAIL_TEST = "Framework Mail Test";
-
-  LoginPage loginPage;
-  MailPage mailPage;
-  SentPage sentPageYandex;
+  private YandexPageService yandexPageService = new YandexPageService();
+  private LoginPageService loginPageService = new LoginPageService();
+  private MailPageService mailPageService = new MailPageService();
+  private SentPageService sentPageService = new SentPageService();
+  private User user = new User();
+  private Mail mail = new Mail();
 
   @BeforeClass
   private void setUp() {
-    loginPage = new LoginPage(Browser.getDriver());
-    loginPage.loginToMail(LOGIN_YANDEX, PASSWORD).sendNewMail(LOGIN_YANDEX, MAIL_TEST);
+    yandexPageService.openLoginPage();
+    loginPageService.loginToMail(user.getLogin(), user.getPassword());
   }
 
   @AfterClass
   private void tearDown() {
-    WebDriverWait wait = new WebDriverWait(Browser.getDriver(), Duration.ofSeconds(30));
-    WebElement newMail = wait.until(ExpectedConditions.elementToBeClickable(MAIL_SUBJECT_LOCATOR));
-    mailPage.deleteTopMailFromIncomingIfEqualsGiven(MAIL_TEST);
-    mailPage.goToSentPage().deleteTopMailFromSentIfEqualsGiven(MAIL_TEST);
-    loginPage.doLogout();
+    waitNewMailArrive();
+    mailPageService.deleteTopMailFromIncomingIfEqualsGiven(mail.getSubject());
+    mailPageService.goToSentPage();
+    sentPageService.deleteTopMailFromSentIfEqualsGiven(mail.getSubject());
+    mailPageService.doLogout();
   }
 
   @Test
   public void sentMailAppearedInSentTabTest() {
-    mailPage = new MailPage(Browser.getDriver());
-    WebDriverWait wait = new WebDriverWait(Browser.getDriver(), Duration.ofSeconds(30));
-    WebElement newMail = wait.until(ExpectedConditions.elementToBeClickable(MAIL_SUBJECT_LOCATOR));
-    boolean b = mailPage.goToSentPage().isTopMailSubjectEqualsGiven(MAIL_TEST);
+    mailPageService.sendNewMail(mail.getAddress(), mail.getSubject(), mail.getText());
+    waitNewMailArrive();
+    mailPageService.goToSentPage();
+    boolean b = sentPageService.isTopMailSubjectEqualsGiven(mail.getSubject());
     Assert.assertTrue(b, "mail wasn't send");
   }
 
   @Test(dependsOnMethods = "sentMailAppearedInSentTabTest")
   public void sentMailAppearedInIncomingTabTest() {
-    sentPageYandex = new SentPage(Browser.getDriver());
-    boolean b = sentPageYandex.returnToMailPage().isTopMailSubjectEqualsGiven(MAIL_TEST);
+    sentPageService.returnToMailPage();
+    boolean b = mailPageService.isTopMailSubjectEqualsGiven(mail.getSubject());
     Assert.assertTrue(b, "mail wasn't received");
   }
 }

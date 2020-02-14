@@ -2,24 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Testing cloud suite" verbose="2" parallel="tests" thread-count="1"
   allow-return-values="true">
-  <test name="Login tests" enabled="false">
+  <test name="Login tests">
     <classes>
-      <class name="com.itacademy.tests.cloud.CloudLoginTest"/>
+      <class name="com.itacademy.tests.cloud.LoginTest"/>
     </classes>
   </test>
-  <test name="Folder tests" enabled="false">
+  <test name="Folder tests">
     <classes>
-      <class name="com.itacademy.tests.cloud.CloudFolderTest"/>
+      <class name="com.itacademy.tests.cloud.FolderTest"/>
     </classes>
   </test>
-  <test name="File tests" enabled="false">
+  <test name="File tests">
     <classes>
-      <class name="com.itacademy.tests.cloud.CloudFileTest"/>
+      <class name="com.itacademy.tests.cloud.FileTest"/>
     </classes>
   </test>
   <test name="Share element tests">
     <classes>
-      <class name="com.itacademy.tests.cloud.CloudShareTest"/>
+      <class name="com.itacademy.tests.cloud.ShareTest"/>
     </classes>
   </test>
 </suite>

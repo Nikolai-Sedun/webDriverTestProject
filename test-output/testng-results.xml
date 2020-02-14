@@ -1,29 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Testing cloud suite" duration-ms="6925" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:23 MSK">
+  <suite name="Testing cloud suite" duration-ms="38322" started-at="2020-02-14T20:15:08 EET" finished-at="2020-02-14T20:15:46 EET">
     <groups>
     </groups>
-    <test name="Share element tests" duration-ms="6925" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:23 MSK">
-      <class name="com.itacademy.tests.cloud.CloudShareTest">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="openBrowser" is-config="true" duration-ms="10369" started-at="2020-02-13T21:30:06 MSK" finished-at="2020-02-13T21:30:16 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="setUp" is-config="true" duration-ms="2971" started-at="2020-02-13T21:30:16 MSK" finished-at="2020-02-13T21:30:19 MSK">
+    <test name="Login tests" duration-ms="5896" started-at="2020-02-14T20:15:08 EET" finished-at="2020-02-14T20:15:13 EET">
+      <class name="com.itacademy.tests.cloud.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.LoginTest@643b1d11]" name="setUp" is-config="true" duration-ms="941" started-at="2020-02-14T20:15:08 EET" finished-at="2020-02-14T20:15:09 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="sharingElementTest()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="sharingElementTest" duration-ms="3910" started-at="2020-02-13T21:30:19 MSK" finished-at="2020-02-13T21:30:23 MSK">
+        <test-method status="PASS" signature="loginToCloudTest()[pri:0, instance:com.itacademy.tests.cloud.LoginTest@643b1d11]" name="loginToCloudTest" duration-ms="3741" started-at="2020-02-14T20:15:09 EET" finished-at="2020-02-14T20:15:12 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToCloudTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.cloud.LoginTest@643b1d11]" name="tearDown" is-config="true" duration-ms="1192" started-at="2020-02-14T20:15:12 EET" finished-at="2020-02-14T20:15:13 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.itacademy.tests.cloud.LoginTest -->
+    </test> <!-- Login tests -->
+    <test name="Folder tests" duration-ms="10272" started-at="2020-02-14T20:15:13 EET" finished-at="2020-02-14T20:15:24 EET">
+      <class name="com.itacademy.tests.cloud.FolderTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.FolderTest@4678c730]" name="setUp" is-config="true" duration-ms="3191" started-at="2020-02-14T20:15:13 EET" finished-at="2020-02-14T20:15:17 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="creatingFolderTest()[pri:0, instance:com.itacademy.tests.cloud.FolderTest@4678c730]" name="creatingFolderTest" duration-ms="3231" started-at="2020-02-14T20:15:17 EET" finished-at="2020-02-14T20:15:20 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- creatingFolderTest -->
+        <test-method status="PASS" signature="deletingFolderTest()[pri:0, instance:com.itacademy.tests.cloud.FolderTest@4678c730]" name="deletingFolderTest" duration-ms="2978" started-at="2020-02-14T20:15:20 EET" finished-at="2020-02-14T20:15:23 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletingFolderTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.cloud.FolderTest@4678c730]" name="tearDown" is-config="true" duration-ms="869" started-at="2020-02-14T20:15:23 EET" finished-at="2020-02-14T20:15:24 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.itacademy.tests.cloud.FolderTest -->
+    </test> <!-- Folder tests -->
+    <test name="File tests" duration-ms="10724" started-at="2020-02-14T20:15:24 EET" finished-at="2020-02-14T20:15:34 EET">
+      <class name="com.itacademy.tests.cloud.FileTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.FileTest@4b9e13df]" name="setUp" is-config="true" duration-ms="3074" started-at="2020-02-14T20:15:24 EET" finished-at="2020-02-14T20:15:27 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="uploadingFileTest()[pri:0, instance:com.itacademy.tests.cloud.FileTest@4b9e13df]" name="uploadingFileTest" duration-ms="2518" started-at="2020-02-14T20:15:27 EET" finished-at="2020-02-14T20:15:29 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadingFileTest -->
+        <test-method status="PASS" signature="dragAndDropFileTest()[pri:0, instance:com.itacademy.tests.cloud.FileTest@4b9e13df]" name="dragAndDropFileTest" duration-ms="4342" started-at="2020-02-14T20:15:29 EET" depends-on-methods="com.itacademy.tests.cloud.FileTest.uploadingFileTest" finished-at="2020-02-14T20:15:34 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dragAndDropFileTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.cloud.FileTest@4b9e13df]" name="tearDown" is-config="true" duration-ms="787" started-at="2020-02-14T20:15:34 EET" finished-at="2020-02-14T20:15:34 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.itacademy.tests.cloud.FileTest -->
+    </test> <!-- File tests -->
+    <test name="Share element tests" duration-ms="11393" started-at="2020-02-14T20:15:34 EET" finished-at="2020-02-14T20:15:46 EET">
+      <class name="com.itacademy.tests.cloud.ShareTest">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.itacademy.tests.cloud.ShareTest@d8355a8]" name="openBrowser" is-config="true" duration-ms="4580" started-at="2020-02-14T20:15:03 EET" finished-at="2020-02-14T20:15:08 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.itacademy.tests.cloud.ShareTest@d8355a8]" name="setUp" is-config="true" duration-ms="3080" started-at="2020-02-14T20:15:34 EET" finished-at="2020-02-14T20:15:38 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="sharingElementTest()[pri:0, instance:com.itacademy.tests.cloud.ShareTest@d8355a8]" name="sharingElementTest" duration-ms="3398" started-at="2020-02-14T20:15:38 EET" finished-at="2020-02-14T20:15:41 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sharingElementTest -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.itacademy.tests.cloud.CloudShareTest@5dfcfece]" name="closeBrowser" is-config="true" duration-ms="4883" started-at="2020-02-13T21:30:23 MSK" finished-at="2020-02-13T21:30:28 MSK">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.itacademy.tests.cloud.ShareTest@d8355a8]" name="tearDown" is-config="true" duration-ms="4915" started-at="2020-02-14T20:15:41 EET" finished-at="2020-02-14T20:15:46 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.itacademy.tests.cloud.ShareTest@d8355a8]" name="closeBrowser" is-config="true" duration-ms="2905" started-at="2020-02-14T20:15:46 EET" finished-at="2020-02-14T20:15:49 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.itacademy.tests.cloud.CloudShareTest -->
+      </class> <!-- com.itacademy.tests.cloud.ShareTest -->
     </test> <!-- Share element tests -->
   </suite> <!-- Testing cloud suite -->
 </testng-results>

@@ -1,21 +1,31 @@
 package com.itacademy.tests.cloud;
 
-import com.itacademy.service.MainPageService;
+import com.itacademy.models.User;
+import com.itacademy.service.cloud.LoginPageService;
+import com.itacademy.service.cloud.MainPageService;
 import com.itacademy.tests.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CloudFolderTest extends BaseTest {
+public class FolderTest extends BaseTest {
 
   private static final String FOLDER_NAME = "Новая папка";
 
-  private MainPageService mainPageService;
+  private LoginPageService loginPageService = new LoginPageService();
+  private MainPageService mainPageService = new MainPageService();
+  private User user = new User();
 
   @BeforeClass
   public void setUp() {
-    mainPageService = new MainPageService();
-    mainPageService.loginToMainPage();
+    loginPageService.openCloudLoginPage();
+    loginPageService.loginToMainPage(user.getLogin(), user.getPassword());
+  }
+
+  @AfterClass
+  private void tearDown() {
+    mainPageService.doLogout();
   }
 
   @Test
@@ -32,3 +42,4 @@ public class CloudFolderTest extends BaseTest {
         "folder deleting failed");
   }
 }
+
